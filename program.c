@@ -9,8 +9,13 @@ int main(){
     // Generate a random number between 1 and 100
     int randomNumber = (rand() % 100) + 1;
     do{
-        printf("Guess a number between 1 and 100:");
-        scanf("%d",&n);
+        jumphere:
+            printf("Guess a number between 1 and 100: \n");
+            scanf("%d",&n);
+        if(n > 100 || n < 1){
+            printf("Enter a number between 1 and 100!\n");
+            goto jumphere;
+        }
         no_of_guesses++;
         if(randomNumber>n){
             printf("Try a higher number\n");
